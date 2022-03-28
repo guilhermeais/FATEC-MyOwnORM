@@ -2,10 +2,16 @@ const { Router } = require('express');
 const routes = Router()
 const parra = require('./parra')
 const pacaembu = require('./pacaembu')
+const mrv = require('./mrv')
+const perplan = require('./perplan')
+const projeto = require('./projeto')
 
 
-routes.use('/pacaembu',pacaembu)
-routes.use('/parra',parra)
+routes.use('/pacaembu', pacaembu)
+routes.use('/parra', parra)
+routes.use('/mrv', mrv)
+routes.use('/perplan', perplan)
+routes.use('/projeto', projeto)
 
 routes.get('/', (req, res) => {
   return res.render('pages/index.ejs', {

@@ -3,10 +3,10 @@ const routes = Router()
 const childrens = require('./childrens')
 routes.use(childrens)
 
-const PREFIX = '/web/pacaembu'
+const PREFIX = '/web/mrv'
 routes.get('/', (req, res) => {
-  return res.render('pages/pacaembu/pacaembu.ejs', {
-    title: 'Pacaembú',
+  return res.render('pages/mrv/mrv.ejs', {
+    title: 'MRV',
     menu: [
       {
         name: 'Voltar', 
