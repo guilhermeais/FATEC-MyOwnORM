@@ -16,6 +16,32 @@ routes.use('/projeto', projeto)
 routes.get('/', (req, res) => {
   return res.render('pages/index.ejs', {
     title: 'Home',
+    carouselItems: [
+      {
+        title: 'Parra',
+        description: 'Empreendimentos Parra',
+        image: '/public/images/construction_parra.jpg',
+        alt: 'parralogo',
+        link: '/web/parra',
+        active: true
+      },
+      {
+        title: 'Pacaembu',
+        description: 'Empreendimentos Pacaembu',
+        image: '/public/images/construction.jpg',
+        alt: 'parralogo',
+        link: '/web/pacaembu',
+        active: false
+      },
+      {
+        title: 'Perplan',
+        description: 'Empreendimentos Perplan',
+        image: '/public/images/construction.jpg',
+        alt: 'parralogo',
+        link: '/web/perplan',
+        active: false
+      }
+    ],  
     menu: [
       {
         name: 'Parra',
