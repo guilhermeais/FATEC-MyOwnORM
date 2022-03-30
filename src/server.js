@@ -7,6 +7,8 @@ const path = require('path')
 app.set('views', path.join(__dirname, '/views'))
 app.set('view engine', 'ejs')
 
+app.use('/public', express.static(path.join(__dirname, '/views/assets')))
+
 app.use(express.json())
 app.use(cors())
 
