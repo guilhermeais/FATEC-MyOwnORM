@@ -70,7 +70,7 @@ DROP TABLE IF EXISTS `livros`;
 CREATE TABLE `livros` (
   `liv_codigo` int NOT NULL AUTO_INCREMENT,
   `liv_titulo` varchar(50) DEFAULT NULL,
-  `liv_edicao` varchar(10) DEFAULT NULL,
+  `liv_edicao` varchar(255) DEFAULT NULL,
   `liv_isbn` varchar(20) DEFAULT NULL,
   `liv_ano` decimal(10,0) DEFAULT NULL,
   `aut_codigo` int NOT NULL,
