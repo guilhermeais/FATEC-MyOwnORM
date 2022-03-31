@@ -19,26 +19,43 @@ routes.get('/', (req, res) => {
     carouselItems: [
       {
         title: 'Parra',
-        description: 'Empreendimentos Parra',
-        image: '/public/images/construction_parra.jpg',
+        description: 'Veja os mais novos imóveis da Parra',
+        image: '/public/images/mordern_construction.jpg',
         alt: 'parralogo',
         link: '/web/parra',
         active: true
       },
+      
+      {
+        title: 'Projeto',
+        description: 'Projetos variados',
+        image: '/public/images/construction_high_quality.jpg',
+        alt: 'projetoslogo',
+        link: '/web/projeto',
+        active: false
+      },
       {
         title: 'Pacaembu',
-        description: 'Empreendimentos Pacaembu',
-        image: '/public/images/construction.jpg',
+        description: 'Veja os mais novos imóveis da construtora Pacaembu',
+        image: '/public/images/technology-image.webp',
         alt: 'parralogo',
         link: '/web/pacaembu',
         active: false
       },
       {
         title: 'Perplan',
-        description: 'Empreendimentos Perplan',
-        image: '/public/images/construction.jpg',
+        description: 'Empreendimentos Perplan que estão prestes a ser lançados',
+        image: '/public/images/bg-emp2.jpg',
         alt: 'parralogo',
         link: '/web/perplan',
+        active: false
+      },
+      {
+        title: 'MRV',
+        description: 'Conquiste seu apê na MRV',
+        image: '/public/images/ape_mrv.jpg',
+        alt: 'mrvlogo',
+        link: '/web/mrv',
         active: false
       }
     ],  

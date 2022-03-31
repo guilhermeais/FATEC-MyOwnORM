@@ -1,15 +1,18 @@
 <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+  
   <div class="carousel-indicators">
-    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
-    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    <% carouselItems.forEach((item, index) => { %>
+      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="<%= index %>" class="<%= item.active?'active':'' %>" aria-current="<%= item.active?'true':'false' %>" aria-label="Slide <%= index+1 %>"></button>
+   
+      <% }) %>
+  
   </div>
   <div class="carousel-inner">
     <% carouselItems.forEach(item => { %>
      
         <div onclick="window.open(' <%= item.link %> ', '_blank')" class="carousel-item <%= item.active?'active':'' %> shadow border p-4 rounded" style="cursor: pointer; object-fit: scale-down;" data-bs-interval="5000">
-          <img width="350" height="700"  style="object-fit: cover;" src="<%= item.image %> " class="d-block w-100" alt="<%= item.alt %> ">
-          <div class="carousel-caption d-none bg-light bg-gradient d-md-block">
+          <img width="350" height="500"  style="object-fit: contain;" src="<%= item.image %> " class="d-block w-100" alt="<%= item.alt %> ">
+          <div class="carousel-caption d-none bg-light bg-gradient d-md-block rounded shadow-sm">
             <h5> <%= item.title %>  </h5>
             <p> <%= item.description %>  </p>
           </div>
