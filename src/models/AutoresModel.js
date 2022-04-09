@@ -1,16 +1,27 @@
-const { query } = require('../database')
+const { executeQuery } = require('../database')
 const Model = require('./_Model')
-module.exports = class Autores extends Model {
-   async get(config = {select: ['*'], where: {}}){
-        const whereValues = config.where
-        const selectValues = config.select 
 
-        let query = `select ${selectValues.join(', ')} from autores `
-
-        if(whereValues.length > 0){
-            query += Object.entries(whereValues).map(([key, value]) => `${key} = ${value}`)
-        }
-   }
-
+class Autores extends Model {
+    async find({select = ['*'], where = {}}){
+         const whereValues = where
+         const selectValues = select 
+ 
+         let query = `select ${selectValues.join(', ')} from autores `
+ 
+         if(Object.keys(whereValues).length > 0){
+             const whereToSql = this.whereObjectToSQL(whereValues)
+             query += whereToSql
+         }
+ 
+         const result = await executeQuery(query)
+ 
+         return result
+    }
     
-}
+    async create() {
+        
+    }
+     
+ }
+
+module.exports = new Autores();
