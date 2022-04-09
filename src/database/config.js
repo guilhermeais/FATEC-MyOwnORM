@@ -1,3 +1,4 @@
+require('dotenv').config()
 module.exports = Object.freeze({
     DB_HOSTNAME: process.env.DB_HOSTNAME,
     DB_PORT: process.env.DB_PORT || 3306,
