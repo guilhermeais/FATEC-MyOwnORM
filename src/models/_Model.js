@@ -4,7 +4,13 @@ class NotImplementedError extends Error {
     }
 }
 module.exports = class Model {
-    get({}){
+   
+    whereObjectToSQL(object){
+
+        return Object.entries(object).reduce((sql, [key, value]) => sql+=`${key} = ${value}`, ' where ')
+    }
+
+    get(config = {select: ['*'], where: {}}){
         throw new NotImplementedError('get')
     }
 
