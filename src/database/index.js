@@ -1,7 +1,7 @@
 const mysql = require('mysql2/promise');
 const config = require('./config');
 
-async function query(sql, params) {
+async function executeQuery(sql, params) {
     const configDb = {
         host: config.DB_HOSTNAME,
         user: config.DB_USERNAME,
@@ -15,5 +15,5 @@ async function query(sql, params) {
 }
 
 module.exports = {
-  query
+  executeQuery
 }
